@@ -4,6 +4,7 @@
         "flutlab",
         "Getx",
         "paystack",
-        "paytm"
+        "paytm",
+        "signup"
     ]
 }
