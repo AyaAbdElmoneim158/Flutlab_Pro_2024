@@ -272,6 +272,12 @@
       "languageVersion": "3.2"
     },
     {
+      "name": "smooth_page_indicator",
+      "rootUri": "file:///C:/Users/compu%20magic/AppData/Local/Pub/Cache/hosted/pub.dev/smooth_page_indicator-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "source_span",
       "rootUri": "file:///C:/Users/compu%20magic/AppData/Local/Pub/Cache/hosted/pub.dev/source_span-1.10.0",
       "packageUri": "lib/",
@@ -410,7 +416,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-02-17T20:41:45.675375Z",
+  "generated": "2024-02-17T20:44:43.193420Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }
