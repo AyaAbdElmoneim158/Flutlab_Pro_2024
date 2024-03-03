@@ -1,7 +1,7 @@
 class TTexts {
   static const String submit = "Submit";
   static const String appName = "T-Store";
-  static const String tcontinue = "Continue";
+  static const String tContinue = "Continue";
 
   //Onboarding Texts - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
   static const String onboardingTitle1 = 'Choose your Product';
@@ -41,7 +41,6 @@ class TTexts {
   static const String resendEmailIn = "Resend email in";
   static const String and = "and";
 
-
   static const String loginTitle = "Welcome Back";
   static const String loginSupTitle =
       "Discover Limitless Choices and unmatched Convenience.";
@@ -51,12 +50,15 @@ class TTexts {
       "Don't worry sometimes people can forget too, enter your email and we will send you a password reset Link.";
   static const String changeYourPasswordTitle = "Password Reset Email Sent";
 
-static const String changeYourPasswordSubTitle = "Your Account Security is Our Priority! we've sent. You a Secure Link to Safety Change Your Password and Keep Your Account Protected."; 
-static const String confirmEmail = "verify your email address!";
-static const String confirmEmailSupTitle = "Congratulations! Your Account Assists: Verify Your Email to start Shopping and Experience a world of services Deals and Personalized Offers.";
- static const String emailNotReceivedMessage = "Didn't get the email? Check your junk/span or resend it."; 
- static const String yourAccountCreatedTitle = "Your account successfully created";
- static const String yourAccountCreatedSubtitle ="Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
- 
+  static const String changeYourPasswordSubTitle =
+      "Your Account Security is Our Priority! we've sent. You a Secure Link to Safety Change Your Password and Keep Your Account Protected.";
+  static const String confirmEmail = "verify your email address!";
+  static const String confirmEmailSupTitle =
+      "Congratulations! Your Account Assists: Verify Your Email to start Shopping and Experience a world of services Deals and Personalized Offers.";
+  static const String emailNotReceivedMessage =
+      "Didn't get the email? Check your junk/span or resend it.";
+  static const String yourAccountCreatedTitle =
+      "Your account successfully created";
+  static const String yourAccountCreatedSubtitle =
+      "Welcome to Your Ultimate Shopping Destination: Your Account is Created, Unleash the Joy of Seamless Online Shopping!";
 }
-
