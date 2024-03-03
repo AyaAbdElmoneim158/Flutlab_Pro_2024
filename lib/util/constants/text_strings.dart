@@ -40,6 +40,7 @@ class TTexts {
   static const String resendEmail = "Resend Email";
   static const String resendEmailIn = "Resend email in";
   static const String and = "and";
+  static const String done = "Done";
 
   static const String loginTitle = "Welcome Back";
   static const String loginSupTitle =
