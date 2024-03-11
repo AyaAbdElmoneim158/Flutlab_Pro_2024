@@ -1,5 +1,6 @@
 import 'package:flutlab_projects_2024/features/shop/screens/home/home_screen.dart';
 import 'package:flutlab_projects_2024/features/shop/screens/store/store_screen.dart';
+import 'package:flutlab_projects_2024/features/shop/screens/wishlist/wishlist_screen.dart';
 import 'package:flutlab_projects_2024/util/constants/colors.dart';
 import 'package:flutlab_projects_2024/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +46,7 @@ class NavigationController extends GetxController {
   List<Widget> screens(context) => [
         const HomeScreen(),
         const StoreScreen(),
+        const WishlistScreen(),
         Center(
           child: Text(
             "WishList Screen",
