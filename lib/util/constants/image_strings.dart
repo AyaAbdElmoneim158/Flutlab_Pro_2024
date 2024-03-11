@@ -33,4 +33,6 @@ class TImage {
 
   static const String shoes = '$imagesPath/categories/shoes.jpg';
   static const String pants = '$imagesPath/products/pants.jpg';
+  static const String user = '$imagesPath/user.png';
+
 }

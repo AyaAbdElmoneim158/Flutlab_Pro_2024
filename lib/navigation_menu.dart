@@ -1,3 +1,4 @@
+import 'package:flutlab_projects_2024/features/personalization/screens/settings/settings_screen.dart';
 import 'package:flutlab_projects_2024/features/shop/screens/home/home_screen.dart';
 import 'package:flutlab_projects_2024/features/shop/screens/store/store_screen.dart';
 import 'package:flutlab_projects_2024/features/shop/screens/wishlist/wishlist_screen.dart';
@@ -43,21 +44,10 @@ class NavigationMenu extends StatelessWidget {
 
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
-  List<Widget> screens(context) => [
-        const HomeScreen(),
-        const StoreScreen(),
-        const WishlistScreen(),
-        Center(
-          child: Text(
-            "WishList Screen",
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ),
-        Center(
-          child: Text(
-            "Profile Screen",
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ),
+  List<Widget> screens(context) => const [
+        HomeScreen(),
+        StoreScreen(),
+        WishlistScreen(),
+        SettingsScreen(),
       ];
 }
