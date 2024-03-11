@@ -1,3 +1,5 @@
+import 'package:flutlab_projects_2024/features/shop/screens/home/home_screen.dart';
+import 'package:flutlab_projects_2024/features/shop/screens/store/store_screen.dart';
 import 'package:flutlab_projects_2024/util/constants/colors.dart';
 import 'package:flutlab_projects_2024/util/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -41,18 +43,8 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs;
   List<Widget> screens(context) => [
-        Center(
-          child: Text(
-            "Home Screen",
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ),
-        Center(
-          child: Text(
-            "Store Screen",
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-        ),
+        const HomeScreen(),
+        const StoreScreen(),
         Center(
           child: Text(
             "WishList Screen",

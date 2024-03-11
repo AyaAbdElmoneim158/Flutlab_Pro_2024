@@ -1,6 +1,8 @@
+import 'package:flutlab_projects_2024/common/widgets/appbar/tabbar.dart';
 import 'package:flutlab_projects_2024/common/widgets/brands/brand_card.dart';
 import 'package:flutlab_projects_2024/common/widgets/products_card/cart_menu_icon.dart';
 import 'package:flutlab_projects_2024/common/widgets/text/section_heading.dart';
+import 'package:flutlab_projects_2024/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:flutlab_projects_2024/util/constants/colors.dart';
 import 'package:flutlab_projects_2024/util/constants/sizes.dart';
 import 'package:flutlab_projects_2024/util/helpers/helper_functions.dart';
@@ -70,11 +72,24 @@ class StoreScreen extends StatelessWidget {
                   ),
                 ),
 
-                
+                ///* Tabs - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                bottom: const TTabBar(tabs: [
+                  Tab(child: Text("Sports")),
+                  Tab(child: Text("Furniture")),
+                  Tab(child: Text("Electronics")),
+                  Tab(child: Text("Clothes")),
+                  Tab(child: Text("Cosmetics")),
+                ]),
               ),
             ];
           },
-          body: const Text("Body"),
+          body: const TabBarView(children: [
+            TCategoryTab(),
+            TCategoryTab(),
+            TCategoryTab(),
+            TCategoryTab(),
+            TCategoryTab(),
+          ]),
         ),
       ),
     );
