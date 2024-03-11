@@ -7,6 +7,7 @@ environment:
   sdk: ">=3.0.0 <4.0.0"
   # - - - - - -Packages- - - - - -
 dependencies:
+  carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
@@ -31,6 +32,9 @@ flutter:
   assets:
     - assets/images/
     - assets/images/onboarding_images/
+    - assets/images/banners/
+    - assets/images/categories/
+    - assets/images/products/
     - assets/logos/
 
   # - - - - - -Local_Fonts- - - - - -

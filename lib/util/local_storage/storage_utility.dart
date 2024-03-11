@@ -12,9 +12,6 @@ class TLocalStorage {
 
   Future<void> saveData<T>(String key, T value) async {
     await _storage.write(key, value);
-    T? readData<T>(String key) {
-      return _storage.read<T>(key);
-    }
   }
 
   Future<void> removeData(String key) async {

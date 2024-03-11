@@ -21,7 +21,7 @@ class TFormatter {
   }
 
   static String? internationalFormatPhoneNumber(String phoneNumber) {
-    var digitsOnly = phoneNumber.replaceAll(RegExp('\D'), '');
+    var digitsOnly = phoneNumber.replaceAll(RegExp('D'), '');
     String countryCode = '+${digitsOnly.substring(0, 2)}';
     digitsOnly = digitsOnly.substring(2);
 
@@ -42,6 +42,3 @@ class TFormatter {
     return null;
   }
 }
-
-
-
