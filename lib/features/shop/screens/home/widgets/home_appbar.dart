@@ -1,8 +1,10 @@
 import 'package:flutlab_projects_2024/common/widgets/appbar/appbar.dart';
 import 'package:flutlab_projects_2024/common/widgets/products_card/cart_menu_icon.dart';
+import 'package:flutlab_projects_2024/features/shop/screens/cart/cart_screen.dart';
 import 'package:flutlab_projects_2024/util/constants/colors.dart';
 import 'package:flutlab_projects_2024/util/constants/text_strings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class THomeAppbar extends StatelessWidget {
   const THomeAppbar({
@@ -32,7 +34,7 @@ class THomeAppbar extends StatelessWidget {
         ],
       ),
       actions: [
-        TCardCounterIcon(onPress: () {}),
+        TCardCounterIcon(onPress: () => Get.to(() => const CartScreen()),)
       ],
     );
   }
