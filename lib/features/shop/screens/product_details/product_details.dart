@@ -3,8 +3,10 @@ import 'package:flutlab_projects_2024/features/shop/screens/product_details/widg
 import 'package:flutlab_projects_2024/features/shop/screens/product_details/widgets/product_image_slider.dart';
 import 'package:flutlab_projects_2024/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:flutlab_projects_2024/features/shop/screens/product_details/widgets/rating_share_widget.dart';
+import 'package:flutlab_projects_2024/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:flutlab_projects_2024/util/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -79,7 +81,7 @@ class ProductDetailsScreen extends StatelessWidget {
                           Iconsax.arrow_right_3,
                           size: 18,
                         ),
-                        onPressed: () {},
+                        onPressed: () => Get.to(()=> const ProductReviewsScreen()),
                       ),
                       const SizedBox(height: TSizes.spaceBtwSections),
                     ],
