@@ -272,6 +272,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "readmore",
+      "rootUri": "file:///C:/Users/compu%20magic/AppData/Local/Pub/Cache/hosted/pub.dev/readmore-2.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.16"
+    },
+    {
       "name": "sky_engine",
       "rootUri": "file:///C:/src/flutter_windows_3.7.9-stable/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
@@ -422,7 +428,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-03-03T21:02:12.002250Z",
+  "generated": "2024-03-12T10:13:29.118425Z",
   "generator": "pub",
   "generatorVersion": "3.2.6"
 }
