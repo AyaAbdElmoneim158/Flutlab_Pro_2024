@@ -85,7 +85,7 @@ class TSignupForm extends StatelessWidget {
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () => Get.to(() => const VerifyEmailScreen()),
+              onPressed: () => Get.to(() => const VerifyEmailScreen(email: '')),
               child: const Text(TTexts.createAccount),
             ),
           ),
