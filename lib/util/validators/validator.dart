@@ -1,4 +1,11 @@
 class TValidator {
+  static String? validateEmptyText(String? firstName, String? value) {
+    if (value == null || value.isEmpty) {
+      return '$firstName is required.';
+    }
+    return null;
+  }
+
   static String? validateEmail(String? value) {
     if (value == null || value.isEmpty) {
       return 'Email is required.';
@@ -40,5 +47,4 @@ class TValidator {
     }
     return null;
   }
-  
 }

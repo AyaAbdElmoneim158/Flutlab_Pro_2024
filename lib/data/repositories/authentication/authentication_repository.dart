@@ -5,6 +5,8 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import '../../../features/authentication/screens/signup/verify_email_screen.dart';
+import '../../../navigation_menu.dart';
 import '../../../util/exceptions/firebase_auth_exception.dart';
 import '../../../util/exceptions/firebase_exception.dart';
 import '../../../util/exceptions/format_exception.dart';
@@ -26,10 +28,19 @@ class AuthenticationRepository extends GetxController {
 
   ///* Function to Show Relevant Screen - - - - - - - - - -- - - - - - - - - -
   screenRedirect() async {
-    deviceStorage.writeIfNull('IsFirstTime', true);
-    deviceStorage.read('IsFirstTime') != true
-        ? Get.offAll(() => const LoginScreen())
-        : Get.offAll(const OnboardingScreen());
+    final user = _auth.currentUser;
+    if (user != null) {
+      if (user.emailVerified) {
+        Get.offAll(() => const NavigationMenu());
+      } else {
+        Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));
+      }
+    } else {
+      deviceStorage.writeIfNull('IsFirstTime', true);
+      deviceStorage.read('IsFirstTime') != true
+          ? Get.offAll(() => const LoginScreen())
+          : Get.offAll(const OnboardingScreen());
+    }
   }
 
   ///* LoginWithEmailAndPassword - - - - - - - - - -- - - - - - - - - - - - - -
