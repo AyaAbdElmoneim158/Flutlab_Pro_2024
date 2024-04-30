@@ -1,7 +1,10 @@
-import '/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import '../../../../../util/validators/validator.dart';
+import '../../../controllers/login/login_controller.dart';
+import '/features/authentication/screens/password_config/forget_password.dart';
+import '/features/authentication/screens/signup/signup_screen.dart';
 import '/util/constants/sizes.dart';
 import '/util/constants/text_strings.dart';
 
@@ -12,25 +15,41 @@ class TLoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
+
     return Form(
+      key: controller.signInFormKey,
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
           children: [
             //* Email - - - - - - - - - - - - - - -
             TextFormField(
+              controller: controller.email,
               decoration: const InputDecoration(
                 label: Text(TTexts.email),
                 prefixIcon: Icon(Iconsax.direct_right),
               ),
+              validator: (value) => TValidator.validateEmail(value),
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields),
             //* Password - - - - - - - - - - - - - - -
-            TextFormField(
-              decoration: const InputDecoration(
-                label: Text(TTexts.password),
-                prefixIcon: Icon(Iconsax.password_check),
-                suffixIcon: Icon(Iconsax.eye_slash),
+            Obx(
+              () => TextFormField(
+                obscureText: controller.hidePassword.value,
+                controller: controller.password,
+                decoration: InputDecoration(
+                  label: const Text(TTexts.password),
+                  prefixIcon: const Icon(Iconsax.password_check),
+                  suffixIcon: IconButton(
+                    onPressed: () => controller.hidePassword.value =
+                        !controller.hidePassword.value,
+                    icon: Icon(controller.hidePassword.value
+                        ? Iconsax.eye_slash
+                        : Iconsax.eye),
+                  ),
+                ),
+                validator: (value) => TValidator.validatePassword(value),
               ),
             ),
             const SizedBox(height: TSizes.spaceBtwInputFields / 2),
@@ -40,15 +59,18 @@ class TLoginForm extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Checkbox(
-                      value: true,
-                      onChanged: (value) {},
+                    Obx(
+                      () => Checkbox(
+                        value: controller.rememberMe.value,
+                        onChanged: (value) => controller.rememberMe.value =
+                            !controller.rememberMe.value,
+                      ),
                     ),
                     const Text(TTexts.rememberMe),
                   ],
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(TTexts.forgetPassword),
                 ),
               ],
@@ -58,7 +80,8 @@ class TLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => controller
+                    .loginWithEmailAndPassword, //=> Get.to(() => const NavigationMenu()),
                 child: const Text(TTexts.signIn),
               ),
             ),
@@ -66,9 +89,7 @@ class TLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {
-                  Get.to(() => const SignupScreen());
-                },
+                onPressed: () => Get.to(() => const SignupScreen()),
                 child: const Text(TTexts.createAccount),
               ),
             ),
